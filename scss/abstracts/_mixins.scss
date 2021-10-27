@@ -1,0 +1,34 @@
+/// Display block with options
+/// @param {string} $align - Elements alignment
+/// @param {string} $margin [10px] - Add margin-left
+@mixin display-block($align, $margin: 10px) {
+	display: block;
+	vertical-align: $align;
+	margin-left: $margin;
+
+	@if $margin < 10 {
+		padding: 3px;
+	}
+
+    @if $align == 'middle' {
+		text-align: center;
+	}
+}
+
+/// Reduce font size of a set of elements
+/// @param {array} $desc - List of elements classes
+@mixin reduce-font-size($desc...) {
+	@for $i from 0 to length($desc) {
+		#{nth($desc, $i + 1)} {
+			font-size: 30px + (-$i * 5);
+		}
+	}
+}
+
+/// Add rounded edges
+/// @param {string} $radius - Radius size
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}

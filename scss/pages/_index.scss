@@ -1,0 +1,34 @@
+/// Special styles for index page
+/// @author François
+
+@use '../abstracts' as *;
+
+/** DIFFERENT USES **/
+
+// use of variables
+h1 {
+	font-size: 40px;
+	color: $color-navy-main;
+}
+
+// use of mixins
+.next-edition {
+	@include reduce-font-size(".coming1", ".coming2", ".coming3");
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	padding-top: 40px;
+}
+
+// use of functions
+.container {
+	display: block;
+	margin-top: #{sum(20, 15, 5)}px;
+	margin-bottom: #{sum(20, 15, 5)}px;
+}
+
+// use of placeholders
+.title, .subtitle {
+	@extend %block-center;
+	text-align: center;
+}

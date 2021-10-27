@@ -1,0 +1,60 @@
+/// Special styles for cards
+/// @author François
+
+@use '../abstracts' as *;
+
+.cards-container {
+	font-family: $default-fonts;
+	background-color: $color-navy-main;
+	padding: $small-spacing;
+	height: 25vh;
+	@extend %flex-center;
+	@include border-radius(1rem);
+	margin: auto;
+    margin-top: 150px;
+	margin-bottom: 100px;
+	width: 40%;
+}
+
+.card {
+	background-color: white;
+	width: 20rem;
+	height: 25rem;
+	overflow: hidden;
+	margin: 2rem;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+	@include border-radius(0.5rem);
+
+	.card__image {
+		height: 14rem;
+		background-image: url($images-folder + 'utmb-day.png');
+		background-size: cover;
+		background-position: center center;
+	}
+
+	.card__content {
+		padding: $small-spacing;
+	}
+
+	.card__title {
+		margin: 0;
+		color: black;
+	}
+
+	.card__description {
+		margin: 0;
+		color: $color-dark-grey;
+	}
+
+	&--dark {
+		background: black;
+
+		.card__image {
+			background-image: url($images-folder + 'utmb-night.png');
+		}
+
+		.card__title {
+			color: white;
+		}
+	}
+}

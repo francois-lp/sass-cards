@@ -1,0 +1,13 @@
+/// Center element (flex display)
+%flex-center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/// Center element (block display)
+%block-center {
+    display:block;
+    margin: 0 auto;
+    width: 100%;
+}
